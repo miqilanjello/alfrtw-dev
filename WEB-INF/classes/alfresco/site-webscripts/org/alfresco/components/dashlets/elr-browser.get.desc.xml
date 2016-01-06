@@ -1,0 +1,6 @@
+<webscript>
+   <shortname>ELR-browser</shortname>
+   <description>ELR-browser dashlet</description>
+   <family>site-dashlet</family>
+   <url>/components/dashlets/elr-browser</url>
+</webscript>
