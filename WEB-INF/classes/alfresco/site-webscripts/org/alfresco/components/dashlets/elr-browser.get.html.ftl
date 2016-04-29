@@ -1,3 +1,4 @@
+<p>NEW</p>
 <@markup id="css" >
    <#-- CSS Dependencies -->
    <@link rel="stylesheet" type="text/css" href="${url.context}/res/jquery/themes/default/style.min.css" group="dashlets" />
