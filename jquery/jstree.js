@@ -5239,6 +5239,21 @@
 						});
 					}
 				},
+				"exportxml" : {
+					"icon" : "http://localhost:8080/share/res/components/documentlibrary/images/folder-new-16.png",
+					"separator_before"	: false,
+					"separator_after"	: true,
+					"_disabled"			: function (data) {
+						var inst = $.jstree.reference(data.reference),
+							obj = inst.get_node(data.reference);
+						if(obj.type != "folder" && obj.type != "empty_folder")
+							return true;
+						else
+							return false;
+					},
+					"label"				: "Экспорт в XML",
+					"action"			: function (data) { }
+				},
 				"rename" : {
 					"icon" : "http://localhost:8080/share/res/components/documentlibrary/actions/document-change-type-16.png",
 					"separator_before"	: false,
@@ -5265,11 +5280,14 @@
 					"action"			: function (data) {
 						var inst = $.jstree.reference(data.reference),
 							obj = inst.get_node(data.reference);
-						if(inst.is_selected(obj)) {
-							inst.delete_node(inst.get_selected());
-						}
-						else {
-							inst.delete_node(obj);
+						if(confirm('Подтвердите удаление'))
+						{
+							if(inst.is_selected(obj)) {
+								inst.delete_node(inst.get_selected());
+							}
+							else {
+								inst.delete_node(obj);
+							}
 						}
 					}
 				},
